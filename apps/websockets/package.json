@@ -1,0 +1,21 @@
+{
+  "name": "websockets",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev" : "bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "db" : "workspace:*",
+    "@types/dotenv": "^8.2.3",
+    "@types/ws": "^8.18.1",
+    "dotenv": "^17.2.3",
+    "ws": "^8.19.0"
+  }
+}
