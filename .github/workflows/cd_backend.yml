@@ -21,6 +21,6 @@ jobs:
                 context: .
                 file: ./docker/Dockerfile.be
                 push: true
-                tags: devops/test-backend:${{github.sha}}
+                tags: kartikdoda/test-backend:${{github.sha}}
             
             # SSH into a vm and deploy and pull the pushed image there for be
