@@ -19,7 +19,7 @@ jobs:
               uses: docker/build-push-action@v4
               with: 
                 context: .
-                file: /docker/Dockerfile.fe
+                file: ./docker/Dockerfile.fe
                 push: true
                 tags: devops/test-fe:${{github.sha}}
                 
