@@ -28,4 +28,4 @@ jobs:
               run: |
                  echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/ssh_key
                  chmod 600 ~/ssh_key
-                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@54.89.187.89 "docker pull kartikdoda/test-backend:${{github.sha}} && docker stop test-backend || true && docker rm test-backend || true && docker run -d --name test-backend -p 8080:8080 kartikdoda/test-backend:${{github.sha}}"
+                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@54.89.187.89 "sudo docker pull kartikdoda/test-backend:${{github.sha}} && sudo docker stop test-backend || true && sudo docker rm test-backend || true && sudo docker run -d --name test-backend -p 8080:8080 kartikdoda/test-backend:${{github.sha}}"
