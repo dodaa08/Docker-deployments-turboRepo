@@ -23,7 +23,7 @@ jobs:
                 push: true
                 tags: kartikdoda/test-backend:${{github.sha}}
             
-            
+            #now
             - name: Deploy to VM
               run: |
                  echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/ssh_key
