@@ -26,7 +26,6 @@ jobs:
             # SSH into a vm and deploy and pull the pushed image there for be
             - name: Deploy to VM
               run: |
-                 echo "${{secrets.SSH_PRIVATE_KEY}}" &> ~/ssh_key
-                 mkdir -p /home/runner/.ssh
-                 chmod 700 /home/runner/ssh_key
-                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@54.89.187.89 -t "docker stop kartikdoda/test-fe && docker run -d -p 3000:3000 kartikdoda/test-fe:${{github.sha}}}"
+                 echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/ssh_key
+                 chmod 600 ~/ssh_key
+                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key ubuntu@54.89.187.89 "docker pull kartikdoda/test-fe:${{github.sha}} && docker stop test-fe || true && docker rm test-fe || true && docker run -d --name test-fe -p 3000:3000 kartikdoda/test-fe:${{github.sha}}"
