@@ -5,7 +5,8 @@ WORKDIR /app
 COPY ./package.json ./package.json
 COPY ./turbo.json ./turbo.json
 COPY ./bun.lock ./bun.lock
-COPY ./packages/*/package.json ./packages/
+
+COPY ./packages ./packages
 
 COPY ./apps/backend/package.json ./apps/backend/package.json
 
