@@ -23,7 +23,7 @@ jobs:
                 push: true
                 tags: kartikdoda/test-backend:${{github.sha}}
             
-            # SSH into a vm and deploy and pull the pushed image there for be
+            
             - name: Deploy to VM
               run: |
                  echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/ssh_key
